@@ -56,7 +56,7 @@ jobs:
         if: ${{ contains(matrix.target, 'appimage') }}
         run: |
           mkdir -p artifacts
-          mv build/bundle/*.AppImage artifacts/
+          mv build-fr/bundle/*.AppImage artifacts/
       - name: Rename AppImage
         if: ${{ matrix.target == 'appimage-wayland' }}
         run: |
@@ -96,7 +96,7 @@ jobs:
       - name: Build
         run: ./.ci/macos.sh
       - name: Prepare outputs for caching
-        run: cp -R build/bundle $OS-$TARGET
+        run: cp -R build-fr/bundle $OS-$TARGET
       - name: Cache outputs for universal build
         uses: actions/cache/save@v4
         with:
@@ -285,7 +285,7 @@ jobs:
       - name: Move Docker image to artifacts directory
         run: |
           mkdir -p artifacts
-          mv build/*.dockerimage artifacts/
+          mv build-fr/*.dockerimage artifacts/
       - name: Upload
         uses: actions/upload-artifact@v4
         with:

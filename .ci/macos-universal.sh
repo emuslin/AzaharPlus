@@ -2,8 +2,8 @@
 
 ARTIFACTS_LIST=($ARTIFACTS)
 
-BUNDLE_DIR=build/bundle
-mkdir build
+BUNDLE_DIR=build-fr/bundle
+mkdir build-fr
 
 # Set up the base artifact to combine into.
 BASE_ARTIFACT=${ARTIFACTS_LIST[0]}
